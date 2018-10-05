@@ -152,7 +152,18 @@ python src/models/train_model.py [OPTIONS]
             --width
             --heigth
 ```
-where the default settings of all the options but the modelname are found in ```src/utils/utils.py```.
+where the default settings of all the options but the modelname are found in ```src/utils/utils.py```.  
+The models are defined in ```src/models/model.py``` and you can add as many different architectures as you like.  
+
+The training can be monitored with tensorboard by running 
+```console
+tensorboard --logdir=<path-to-project>/nail-classification/logs/
+```
+from the root directory of the project and executing 
+```console
+http://localhost:6006
+```
+in your browser.  
 
 To run a prediction from the (pre-)trained model finally run 
 ```console
