@@ -67,7 +67,7 @@ You can run the server without the docker image.  Execute<br/>
 ```console
 make server   
 ```
-in the root directory of the project starts the server.  <br/>
+in the root directory of the project to start the server.  <br/>
 Again, open a new terminal and run 
 
 ```console
