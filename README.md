@@ -3,19 +3,19 @@ Nail classification
 
 A deep learning demo project for classifying manufactured nails.  
 
-The data set used for this demo contains 100 images of 'good' nails and 100 images of 'bad' nails, where the property 'good' and 'bad' refer to the nail being either intact or somehow bent, respectively.  
+The data set used for this demo contains 100 images of 'good' nails and 100 images of 'bad' nails, where the property 'good' and 'bad' refers to the nail being either intact or somehow bent, respectively.  
 
-As this data set is rather small it is highly recommended to use a pre-trained model as the building block of the classifier.  In this demo, the pre-trained [vgg16](https://keras.io/applications/#vgg16) model implemented in keras is used along with a customized top to accomplish this binary classification task.  
+As this data set is rather small it is highly recommended to use a pre-trained model as the building block of the classifier.  In this demo, the pre-trained [vgg16](https://keras.io/applications/#vgg16) model, implemented in keras, is used along with a customized top to accomplish this binary classification task.  
 
 Additionally, a simple CNN is implemented to establish an easy baseline.  The simple CNN reached a validation accuracy of 
 *0.625 %*
-after training for 65 epochs 
-whereas the pre-trained vgg16-architecture achieved  
+after training for 65 epochs.
+By contrast, the pre-trained vgg16-architecture achieved  
 *0.958 %*
-for the validation accuracy after training for 10 epochs.  
+for the validation accuracy after training for only 10 epochs.  
 
 
-To increase the performance of the models a cropping algorithm was applied upon the images.  Thereby only the region which shows the target is considered during training and for the prediction.  
+To increase the performance of the models a **cropping routine** was applied upon the images.  Thereby only the region which shows the target is considered during training and for the prediction.  
 
 **To-Do:**
 * Implement robust test routines
