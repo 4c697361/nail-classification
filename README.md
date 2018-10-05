@@ -5,24 +5,84 @@ A deep learning demo project for classifying manufactured nails.
 
 # 1. Easy start - out of the box nail classification: 
 1. Clone the repository
+
     ```console
     git clone git@github.com:L2Data/nail-classification.git
     cd nail-classification
     ```
-2. Download the pre-trained model
-3. Build the docker image (if docker is not installed yet: see the [docker documentation](https://docs.docker.com/) for instructions)
+    
+2. Place the pre-trained model in the folder models/.
+   When you have not any pre-trained model, section **2.** explains how to train you model.
+   
+3. **Using docker**<br/>
+    Build the docker image (if docker is not installed yet: see the [docker documentation](https://docs.docker.com/) for instructions)<br/>
+        
     ```console
     docker build -t nail-classifier .
     docker run -p 127.0.0.1:5000:5000 nail-classifier    
     ```
-    This starts the server API with the pre-trained model in the terminal.  
-    
-    For classifying an image, open a new terminal and type 
+        
+    This starts the server API with the pre-trained model in the terminal.  <br/>
+    For classifying an image, open a new terminal and type<br/> 
+
     ```console
-    docker build -t nail-classifier .
-    docker run -p 127.0.0.1:5000:5000 nail-classifier    
+    curl -X POST -F image=@<path-to-your-nail-image> 'http://localhost:5000/predict' 
     ```
+
+    The classifier is now predicting the class of the image.  <br/>
+    Simultaneously, it will give you information about the probability that the image belongs to 
+
+        a. class 0:  bad nails, p_bad = 1-p_good        
+        b. class 1:  good nails, p_good
+
+    The output format is JSON.
     
+** Alternative to 3.:  local usage**  <br/>
+You can run the server without the docker image.  Execute<br/>
+
+```console
+make server   
+```
+in the root directory of the project starts the server.  <br/>
+Again, open a new terminal and run 
+
+```console
+curl -X POST -F image=@<path-to-your-nail-image> 'http://localhost:5000/predict' 
+```
+
+to classify your nail image.  
+    
+        
+# 2. More information:
+------------
+The local installation of this project comes with several options.  
+Execute 
+
+```console
+make
+```
+
+in the root directory of the project to see what is available: 
+
+```console
+clean               Delete all compiled Python files 
+create_environment  Set up python interpreter environment 
+data                Make Dataset 
+model_predict       Predict from trained model 
+model_train         Train a model 
+requirements        Install Python Dependencies 
+server              Run API 
+test_environment    Test python environment is setup correctly 
+```
+
+**REMARK:** <br/>
+Using ```console make <command> ``` always executes the corresponding python script with default settings.  
+
+
+# 3. Predict from entire folder content:
+----------
+For this task, 
+
 
 
 # Project Organization
