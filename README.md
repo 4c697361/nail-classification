@@ -3,6 +3,21 @@ Nail classification
 
 A deep learning demo project for classifying manufactured nails.  
 
+The data set used for this demo contains 100 images of 'good' nails and 100 images of 'bad' nails, where the property 'good' and 'bad' refer to the nail being either intact or somehow bent, respectively.  
+
+As this data set is rather small it is highly recommended to use a pre-trained model as the building block of the classifier.  In this demo, the pre-trained [vgg16](https://keras.io/applications/#vgg16) model implemented in keras is used along with a customized top to accomplish this binary classification task.  
+
+Additionally, a simple CNN is implemented to establish an easy baseline.  The simple CNN reached a validation accuracy of 
+*0.652 %*
+after training for 400 epochs 
+whereas the pre-trained vgg16-architecture achived 
+*0.958 %*
+for the validation accuracy after training for 12 epochs.  
+
+
+
+
+
 # 1. Easy start - out of the box nail classification: 
 1. Clone the repository
 
@@ -26,7 +41,7 @@ A deep learning demo project for classifying manufactured nails.
     For classifying an image, open a new terminal and type<br/> 
 
     ```console
-    curl -X POST -F image=@<path-to-your-nail-image> 'http://localhost:5000/predict' 
+    curl -X POST -F image=@<path-to-your-nail-image.jpeg> 'http://localhost:5000/predict' 
     ```
 
     The classifier is now predicting the class of the image.  <br/>
@@ -37,7 +52,7 @@ A deep learning demo project for classifying manufactured nails.
 
     The output format is JSON.
     
-** Alternative to 3.:  local usage**  <br/>
+**Alternative to docker:  local usage**  <br/>
 You can run the server without the docker image.  Execute<br/>
 
 ```console
@@ -47,7 +62,7 @@ in the root directory of the project starts the server.  <br/>
 Again, open a new terminal and run 
 
 ```console
-curl -X POST -F image=@<path-to-your-nail-image> 'http://localhost:5000/predict' 
+curl -X POST -F image=@<path-to-your-nail-image.jpeg> 'http://localhost:5000/predict' 
 ```
 
 to classify your nail image.  
