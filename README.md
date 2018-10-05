@@ -8,14 +8,14 @@ The data set used for this demo contains 100 images of 'good' nails and 100 imag
 As this data set is rather small it is highly recommended to use a pre-trained model as the building block of the classifier.  In this demo, the pre-trained [vgg16](https://keras.io/applications/#vgg16) model implemented in keras is used along with a customized top to accomplish this binary classification task.  
 
 Additionally, a simple CNN is implemented to establish an easy baseline.  The simple CNN reached a validation accuracy of 
-*0.652 %*
-after training for 400 epochs 
+*0.625 %*
+after training for 65 epochs 
 whereas the pre-trained vgg16-architecture achived 
 *0.958 %*
-for the validation accuracy after training for 12 epochs.  
+for the validation accuracy after training for 10 epochs.  
 
 
-
+To increase the performance of the models a cropping algorithm was applied upon the images.  Thereby only the region which shows the target is considered during training and for the prediction.  
 
 
 # 1. Easy start - out of the box nail classification: 
@@ -94,11 +94,76 @@ test_environment    Test python environment is setup correctly
 Using ```console make <command> ``` always executes the corresponding python script with default settings.  
 
 
-# 3. Predict from entire folder content:
+# 3. Train a model from scratch:
 ----------
-For this task, 
+For this task first copy the images into the data folder.  The tree structure should look like 
+```console
+└── data
+    └── raw
+        └── nailgun
+            ├── good
+            └── bad   
+```
+and then execute
+```console
+make data
+```
+which creates 
+```console
+└── data
+    └── raw
+    │   └── nailgun
+    │       ├── good
+    │       └── bad
+    └── processed
+        ├── train
+        |   ├── good
+        |   └── bad
+        ├── validate
+        |   ├── good
+        |   └── bad
+        └── test
+            ├── good
+            └── bad
+```
+The subfolders in processed contain cropped images according to a set validation and test split.  
+Alternatively, the data sets can be created by running 
+```console
+python src/data/make_dataset.py [OPTIONS]
+[OPTIONS]:  --split (default 0.12: valdiation and test split)
+            --seed  (default 42: random seed)
+            --clean (default 1 (True): clean processed/<subdirs>)
+            --crop  (default 1 (True): apply cropping)
+```
 
+After creating the training data sets the model can be trained.  Therefore execute 
+```console
+make model_train
+```
 
+Alternatively, the model can be trained by running 
+```console
+python src/models/train_model.py [OPTIONS]
+[OPTIONS]:  --modelname (default 'vgg16: select the model, alternative: 'cnn')
+            --ep
+            --lr
+            --augment
+            --bs
+            --width
+            --heigth
+```
+where the default settings of all the options but the modelname are found in ```src/utils/utils.py```.
+
+To run a prediction from the (pre-)trained model finally run 
+```console
+make model_predict
+```
+or, alternativly, 
+```console
+python src/models/train_predict.py [OPTIONS]
+[OPTIONS]:  --modelname (default 'vgg16: select the model, alternative: 'cnn')
+```
+which yields ```probability(good), label, name``` as an output.  
 
 # Project Organization
 ------------
