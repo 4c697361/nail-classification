@@ -1,9 +1,31 @@
-nail-classification
+Nail classification
 ==============================
 
-A deep learning demo project for classifying manufactured nails
+A deep learning demo project for classifying manufactured nails.  
 
-Project Organization
+# 1. Easy start - out of the box nail classification: 
+1. Clone the repository
+    ```console
+    git clone git@github.com:L2Data/nail-classification.git
+    cd nail-classification
+    ```
+2. Download the pre-trained model
+3. Build the docker image (if docker is not installed yet: see the [docker documentation](https://docs.docker.com/) for instructions)
+    ```console
+    docker build -t nail-classifier .
+    docker run -p 127.0.0.1:5000:5000 nail-classifier    
+    ```
+    This starts the server API with the pre-trained model in the terminal.  
+    
+    For classifying an image, open a new terminal and type 
+    ```console
+    docker build -t nail-classifier .
+    docker run -p 127.0.0.1:5000:5000 nail-classifier    
+    ```
+    
+
+
+# Project Organization
 ------------
 
     ├── LICENSE
