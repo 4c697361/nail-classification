@@ -10,9 +10,8 @@ As this data set is rather small it is highly recommended to use a pre-trained m
 Additionally, a simple CNN is implemented to establish an easy baseline.  The simple CNN reached a validation accuracy of 
 *0.625 %*
 after training for 65 epochs.
-By contrast, the pre-trained vgg16-architecture achieved  
-*0.958 %*
-for the validation accuracy after training for only 10 epochs.  
+By contrast, the pre-trained vgg16-architecture achieved  *0.958 %* for the validation accuracy after training for only 10 epochs.  
+The training was performed on a conventional CPU (Intel® Core™ i7-6500U CPU @ 2.50GHz × 4).
 
 
 To increase the performance of the models a **cropping routine** was applied upon the images.  Thereby only the region which shows the target is considered during training and for the prediction.  It is quite clear that this pre-processing step increases the performance as the images are downsampled when feeding them into the neural network.  In case of the original sized images the target would appear to be even smaller and coarse.  In addition to that features arising from structures of the background might confuse the neural net.
