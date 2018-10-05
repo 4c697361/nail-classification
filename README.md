@@ -10,7 +10,7 @@ As this data set is rather small it is highly recommended to use a pre-trained m
 Additionally, a simple CNN is implemented to establish an easy baseline.  The simple CNN reached a validation accuracy of 
 *0.625 %*
 after training for 65 epochs 
-whereas the pre-trained vgg16-architecture achived 
+whereas the pre-trained vgg16-architecture achieved  
 *0.958 %*
 for the validation accuracy after training for 10 epochs.  
 
@@ -27,7 +27,7 @@ To increase the performance of the models a cropping algorithm was applied upon 
     ```
     
 2. Place the pre-trained model in the folder ```models```.
-   If this folder does not already exist in the root directory of the procject, run 
+   If this folder does not already exist in the root directory of the project, run 
    ```console
     mkdir models/
     ```
@@ -184,7 +184,7 @@ To run a prediction from the (pre-)trained model finally run
 ```console
 make model_predict
 ```
-or, alternativly, 
+or, alternatively, 
 ```console
 python src/models/train_predict.py [OPTIONS]
 [OPTIONS]:  --modelname (default 'vgg16: select the model, alternative: 'cnn')
