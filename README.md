@@ -101,6 +101,8 @@ Using ```console make <command> ``` always executes the corresponding python scr
 
 # 3. Train a model from scratch:
 ----------
+**Creating the data sets - Option 1:**
+
 For this task first copy the images into the data folder.  The tree structure starting from the root directory should look like 
 
     └── data
@@ -141,6 +143,12 @@ python src/data/make_dataset.py [OPTIONS]
             --crop  (default 1 (True): apply cropping)
 ```
 
+**Creating the data sets - Option 2:**
+
+You can alternatively also adjust the directory settings in ```src/utils/utils.py``` to your local settings.
+
+**Training the model**
+
 After creating the training data sets the model can be trained.  Therefore execute 
 ```console
 make model_train
@@ -169,6 +177,8 @@ from the root directory of the project and executing
 http://localhost:6006
 ```
 in your browser.  
+
+**Predicting from the model**
 
 To run a prediction from the (pre-)trained model finally run 
 ```console
