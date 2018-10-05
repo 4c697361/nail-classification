@@ -27,7 +27,7 @@ To increase the performance of the models a cropping algorithm was applied upon 
     ```
     
 2. Place the pre-trained model in the folder models/.
-   When you have not any pre-trained model, section **2.** explains how to train you model.
+   When you have not any pre-trained model, section **3.** explains how to train you model.
    
 3. **Using docker**<br/>
     Build the docker image (if docker is not installed yet: see the [docker documentation](https://docs.docker.com/) for instructions)<br/>
