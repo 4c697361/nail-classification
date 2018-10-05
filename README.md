@@ -15,7 +15,7 @@ By contrast, the pre-trained vgg16-architecture achieved
 for the validation accuracy after training for only 10 epochs.  
 
 
-To increase the performance of the models a **cropping routine** was applied upon the images.  Thereby only the region which shows the target is considered during training and for the prediction.  
+To increase the performance of the models a **cropping routine** was applied upon the images.  Thereby only the region which shows the target is considered during training and for the prediction.  It is quite clear that this pre-processing step increases the performance as the images are downsampled when feeding them into the neural network.  In case of the original sized images the target would appear to be even smaller and coarse.  In addition to that features arising from structures of the background might confuse the neural net.
 
 **To-Do:**
 * Implement robust test routines
