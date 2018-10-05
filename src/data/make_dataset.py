@@ -129,10 +129,10 @@ class prepare_datasets:
                     help='validation and test split (default: 0.12)')
 @click.option('--seed', type=int, default=42,
                     help='random seed (default: 42)')
-@click.option('--clean', type=int, default=0,
+@click.option('--clean', type=int, default=1,
                     help='delete training, validation and test data\n\
                      before creating new\n\
-                     0: False, 1: True (default: 0)')
+                     0: False, 1: True (default: 1)')
 @click.option('--crop', type=int, default=1,
                     help='crop training (train, valid, test) \
                      data to show only the targets\n\

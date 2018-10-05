@@ -17,7 +17,7 @@ class dirs:
 
 class params:
     batch_size = 6
-    epochs = 100
+    epochs = 12
     learning_rate = 0.001
     image_width = 150
     image_heigth = 150

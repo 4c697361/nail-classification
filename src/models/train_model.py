@@ -131,8 +131,8 @@ def train(modelname,
         train_generator,
         callbacks=[
                     TrainValTensorBoard(write_graph=False),
-                    Checkpoint,
-                    Earlystop
+                    Checkpoint#,
+                    #Earlystop
                     ],
         steps_per_epoch=150//batch_size,
         epochs=epochs,
