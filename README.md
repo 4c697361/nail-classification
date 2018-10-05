@@ -76,7 +76,10 @@ curl -X POST -F image=@<path-to-your-nail-image.jpeg> 'http://localhost:5000/pre
 
 to classify your nail image.  
     
-        
+**Remark:**
+In ```src/server/app.py``` the model is loaded outside of the prediction routine.  This is highly recommened as by this the model is load only once which decreases the run time of each request.  
+
+
 # 2. More information:
 ------------
 The local installation of this project comes with several options.  
