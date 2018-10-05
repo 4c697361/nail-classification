@@ -26,8 +26,13 @@ To increase the performance of the models a cropping algorithm was applied upon 
     cd nail-classification
     ```
     
-2. Place the pre-trained model in the folder models/.
-   When you have not any pre-trained model, section **3.** explains how to train you model.
+2. Place the pre-trained model in the folder ```models```.
+   If this folder does not already exist in the root directory of the procject, run 
+   ```console
+    mkdir models/
+    ```
+    from the root directory and copy the ```.h5``` file of the pre-trained model there.    
+   When you have not any pre-trained model or want to train one of yourself, section **3.** explains how to train you model.
    
 3. **Using docker**<br/>
     Build the docker image (if docker is not installed yet: see the [docker documentation](https://docs.docker.com/) for instructions)<br/>
@@ -96,7 +101,7 @@ Using ```console make <command> ``` always executes the corresponding python scr
 
 # 3. Train a model from scratch:
 ----------
-For this task first copy the images into the data folder.  The tree structure should look like 
+For this task first copy the images into the data folder.  The tree structure starting from the root directory should look like 
 
     └── data
         └── raw
