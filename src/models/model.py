@@ -1,4 +1,3 @@
-# imports
 from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Input, Dropout, Flatten, Dense
 from keras import applications
