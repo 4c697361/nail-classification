@@ -97,35 +97,35 @@ Using ```console make <command> ``` always executes the corresponding python scr
 # 3. Train a model from scratch:
 ----------
 For this task first copy the images into the data folder.  The tree structure should look like 
-```console
-└── data
-    └── raw
-        └── nailgun
-            ├── good
-            └── bad   
-```
+
+    └── data
+        └── raw
+            └── nailgun
+                ├── good
+                └── bad   
+
 and then execute
 ```console
 make data
 ```
 which creates 
-```console
-└── data
-    └── raw
-    │   └── nailgun
-    │       ├── good
-    │       └── bad
-    └── processed
-        ├── train
-        |   ├── good
-        |   └── bad
-        ├── validate
-        |   ├── good
-        |   └── bad
-        └── test
-            ├── good
-            └── bad
-```
+
+    └── data
+        └── raw
+        │   └── nailgun
+        │       ├── good
+        │       └── bad
+        └── processed
+            ├── train
+            |   ├── good
+            |   └── bad
+            ├── validate
+            |   ├── good
+            |   └── bad
+            └── test
+                ├── good
+                └── bad
+
 The subfolders in processed contain cropped images according to a set validation and test split.  
 Alternatively, the data sets can be created by running 
 ```console
@@ -165,7 +165,7 @@ python src/models/train_predict.py [OPTIONS]
 ```
 which yields ```probability(good), label, name``` as an output.  
 
-# Project Organization
+# 4. Project Organization
 ------------
 
     ├── LICENSE
