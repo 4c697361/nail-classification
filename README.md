@@ -17,6 +17,10 @@ for the validation accuracy after training for 10 epochs.
 
 To increase the performance of the models a cropping algorithm was applied upon the images.  Thereby only the region which shows the target is considered during training and for the prediction.  
 
+**To-Do:**
+* Implement robust test routines
+* Implement more sophisticated cropping algorithm
+
 
 # 1. Easy start - out of the box nail classification: 
 1. Clone the repository
